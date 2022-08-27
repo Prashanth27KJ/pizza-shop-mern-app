@@ -34,8 +34,6 @@ export const getPizzaById = (pizzaId) => async (dispatch) => {
   try {
     const res = await axios.post("/api/pizzas/getpizzabyid", { pizzaId });
     dispatch({ type: "GET_PIZZABYID_SUCCESS", payload: res.data });
-
-    window.location.href = "/admin/pizzalist";
   } catch (error) {
     dispatch({ type: "GET_PIZZABYID_FAIL", payload: error });
   }
